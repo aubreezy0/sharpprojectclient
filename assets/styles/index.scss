@@ -1,2 +1,45 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$background-color: #4e4e4e;
+$font-color: #dfdfdf;
+$white: #fff;
+$grey: rgb(128, 128, 128);
+$teal: rgb(0, 156, 161);
+$black: #000;
+
+input {
+  color: $black;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.messages {
+  padding: 5px 10px;
+}
+
+.button {
+  background: #555;
+  border: 1px solid #333;
+  padding: 5px 10px;
+  margin: 5px 10px;
+  color: #FFF;
+}
+
+.noclick {
+  pointer-events: none;
+}
+
+.hover {
+  opacity: .8;
+}
