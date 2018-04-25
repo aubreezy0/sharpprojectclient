@@ -6,6 +6,8 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
+const events = require('./auth/events')
+
 $(() => {
-  // your JS code goes here
+  events.addHandlers()
 })

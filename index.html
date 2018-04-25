@@ -15,19 +15,90 @@
       <h1>The Sharp Project</h1>
       <p>For WDI-24</p>
 
-      <div class="hidden">
-        <p>This should be hidden</p>
-      </div>
+<p id="message"></p>
 
-      <div class="messages">
-        <p>I am a Sharp message.</p>
-      </div>
-      <form id="test-form">
+      <h3>Sign Up.</h3>
+      <form id="sign-up">
         <fieldset>
-          <input type="password" name="passwords[old]" autocomplete="foo" placeholder="I am a sharp placeholder">
-      <input class="button" type="submit" value="I am a sharp button">
-    </fieldset>
-  </form>
+          <input type="text" name="credentials[email]" autocomplete="email" placeholder="Email">
+          <input type="password" name="credentials[password]" autocomplete="password" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" autocomplete="password"  placeholder="Password Confirmation">
+          <input class="button" type="submit" value="Sign up!">
+        </fieldset>
+      </form>
+
+    <h3>Sign In.</h3>
+    <form id="sign-in">
+      <fieldset>
+        <input type="text" name="credentials[email]" autocomplete="email" placeholder="Email">
+        <input type="password" name="credentials[password]" autocomplete="password" placeholder="Password">
+        <input class="button" type="submit" value="Sign in!">
+      </fieldset>
+    </form>
+
+
+    <h3>Change Password</h3>
+    <form id="change-password">
+      <fieldset>
+        <input type="password" name="passwords[old]" autocomplete="password" placeholder="Old password">
+        <input type="password" name="passwords[new]" autocomplete="password" placeholder="New password">
+        <input class="button" type="submit" value="Change password.">
+      </fieldset>
+    </form>
+
+
+    <h3>Sign Out</h3>
+    <form id="sign-out">
+      <fieldset>
+        <input class="button" type="submit" value="Sign out.">
+      </fieldset>
+    </form>
+
+    <hr>
+
+    <h3>Add a Project</h3>
+    <form id="add-project">
+      <fieldset>
+        <input type="text" name="project[project_title]" autocomplete="title" placeholder="Project title">
+        <input type="text" name="project[difficulty]" autocomplete="difficulty" placeholder="Level of difficulty">
+        <input class="button" type="submit" value="Create Project.">
+      </fieldset>
+    </form>
+
+<!-- unclear about differences of index/show/update (b/c I'm tired?) so keeping these very literal for now./-->
+
+    <h3>Show all Projects</h3>
+    <form id="show-all-projects">
+      <fieldset>
+        <input class="button" type="submit" value="Show all Projects.">
+      </fieldset>
+    </form>
+
+    <h3>Project Show</h3>
+    <form id="project-show">
+      <fieldset>
+        <input class="button" type="submit" value="Project show.">
+      </fieldset>
+    </form>
+
+    <h3>Project Update</h3>
+    <form id="project-update">
+      <fieldset>
+        <input type="??" name="id" autocomplete="update" placeholder="Project ID">
+        <input type="text" name="project[project_title]" autocomplete="title" placeholder="New project title">
+        <input type="text" name="project[difficulty]" autocomplete="difficulty" placeholder="Level of difficulty">
+        <input class="button" type="submit" value="Update Project.">
+      </fieldset>
+    </form>
+
+    <h3>User Projects</h3>
+    <form id="user-projects">
+      <fieldset>
+        <input class="button" type="submit" value="User projects.">
+      </fieldset>
+    </form>
+
+
 
     </body>
 </html>
