@@ -62,16 +62,47 @@ const onAddProject = function (event) {
     .catch(ui.addProjectFailure)
 }
 
-// show all Projects
-const onShowAllProjects = function (event) {
+// show all handlebars version
+const onGetProjects = (event) => {
   event.preventDefault()
-  console.log('Is events the the thing you are looking for?')
+  api.getProjects()
+    .then(ui.getProjectsSuccess)
+    .catch(ui.getProjectsFailure)
+}
+// show all Projects
+// const onShowAllProjects = function (event) {
+//   event.preventDefault()
+//   console.log('Is events the the thing you are looking for?')
+//
+//   const data = getFormFields(event.target)
+//   document.getElementById('show-all-projects').reset()
+//   api.showAllProjects(data)
+//     .then(ui.showAllProjectsSuccess)
+//     .catch(ui.showAllProjectsFailure)
+// }
+
+// update project onUpdateProject
+const onUpdateProject = function (event) {
+  event.preventDefault()
+  console.log('event onUpdateProject ran')
 
   const data = getFormFields(event.target)
-  document.getElementById('show-all-projects').reset()
-  api.showAllProjects(data)
-    .then(ui.addProjectSuccess)
-    .catch(ui.addProjectFailure)
+  // document.getElementById('update-project').reset()
+  api.updateProject(data)
+    .then(ui.updateProjectSuccess)
+    .catch(ui.updateProjectFailure)
+}
+
+// delete project
+const onDeleteProject = function (event) {
+  event.preventDefault()
+  console.log('This thing is a goner.')
+
+  const data = getFormFields(event.target)
+  document.getElementById('delete-project').reset()
+  api.deleteProject(data)
+    .then(ui.showDeleteProjectSuccess)
+    .catch(ui.showDeleteProjectFailure)
 }
 
 // handlers
@@ -81,7 +112,10 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#add-project').on('submit', onAddProject)
-  $('#show-all-projects').on('submit', onShowAllProjects)
+  $('#show-all-projects').on('submit', onGetProjects)
+  // $('#show-all-projects').on('submit', onShowAllProjects)
+  $('#update-project').on('submit', onUpdateProject)
+  $('#delete-project').on('submit', onDeleteProject)
 }
 
 module.exports = {

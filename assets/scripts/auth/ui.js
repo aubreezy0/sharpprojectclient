@@ -1,6 +1,24 @@
 'use strict'
 
 const store = require('../store')
+const showProjectsTemplate = require('../templates/project-listing.handlebars')
+
+const getProjectsSuccess = (data) => {
+  console.log(data)
+  const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
+  console.log(showProjectsHtml)
+  $('.content').append(showProjectsHtml)
+  // if (data.projects.length === 0) {
+  //   $('.content').html('Time to add a project!')
+  // }
+}
+
+const getProjectsFailure = function (error) {
+  // $('#message').delay(2000).fadeOut(150)
+  $('#message').text('Something went wrong. Try again!')
+  $('#message').css('background-color', 'red')
+  console.error('signUpFailure ran. Error is :', error)
+}
 
 // sign up
 const signUpSuccess = function (data) {
@@ -84,22 +102,64 @@ const addProjectFailure = function (error) {
 }
 
 // show all projects
-const showAllProjectsSuccess = function (data) {
+// const showAllProjectsSuccess = function (data) {
+// //   const showProjectsHtml = showProjectsTemplate({ projects: data.project })
+// //   $('.content').html(showProjectsHtml)
+// //   if (data.project.length === 0) {
+// //     $('.content').html('Add a project first, it will be super fun!')
+// //   }
+// // }
+//   // $('#message').delay(2000).fadeOut(150)
+//   $('#message').text('Look at all the projects people have added!')
+//   $('#message').css('background-color', 'green')
+//   // ('.sign-up-show').addClass('hidden')
+//   console.log('showAllProjectsSuccess ran:', data)
+// }
+//
+// const showAllProjectsFailure = function (error) {
+//   // $('#message').delay(2000).fadeOut(150)
+//   $('#message').text('Something went wrong. Try again!')
+//   $('#message').css('background-color', 'red')
+//   console.error('showAllProjectsFailure ran. Error is :', error)
+// }
+
+// update project
+const updateProjectSuccess = function (data) {
   // $('#message').delay(2000).fadeOut(150)
-  $('#message').text('Look at all the projects people have added!')
+  $('#message').text('You made it different!')
   $('#message').css('background-color', 'green')
   // ('.sign-up-show').addClass('hidden')
-  console.log('showAllProjectsSuccess ran. Is this the data you want?:', data)
+  console.log('updateProjectSuccess ran.:', data)
 }
 
-const showAllProjectsFailure = function (error) {
+const updateProjectFailure = function (error) {
   // $('#message').delay(2000).fadeOut(150)
   $('#message').text('Something went wrong. Try again!')
   $('#message').css('background-color', 'red')
-  console.error('showAllProjectsFailure ran. Error is :', error)
+  console.error('updateProjectFailure ran. Error is :', error)
+}
+
+// delete project
+const deleteProjectSuccess = function (data) {
+  // $('#message').delay(2000).fadeOut(150)
+  $('#message').text('Its a goner!')
+  $('#message').css('background-color', 'green')
+  // ('.sign-up-show').addClass('hidden')
+  console.log('deleteProjectSuccess ran.:', data)
+}
+
+const deleteProjectFailure = function (error) {
+  // $('#message').delay(2000).fadeOut(150)
+  $('#message').text('Something went wrong. Try again!')
+  $('#message').css('background-color', 'red')
+  console.error('deleteProjectFailure ran. Error is :', error)
 }
 
 module.exports = {
+  // showProjectsTemplate,
+  // showProjectsHtml,
+  getProjectsSuccess,
+  getProjectsFailure,
   signUpSuccess,
   signUpFailure,
   signInSuccess,
@@ -110,6 +170,10 @@ module.exports = {
   signOutFailure,
   addProjectSuccess,
   addProjectFailure,
-  showAllProjectsSuccess,
-  showAllProjectsFailure
+  // showAllProjectsSuccess,
+  // showAllProjectsFailure,
+  deleteProjectSuccess,
+  deleteProjectFailure,
+  updateProjectSuccess,
+  updateProjectFailure
 }
