@@ -98,7 +98,7 @@ const onDeleteProject = function (event) {
   event.preventDefault()
   console.log('This thing is a goner.')
 
-  const data = getFormFields(event.target)
+  const data = $(event.target).attr('data-id')
   document.getElementById('delete-project').reset()
   api.deleteProject(data)
     .then(ui.showDeleteProjectSuccess)
@@ -115,7 +115,8 @@ const addHandlers = () => {
   $('#show-all-projects').on('submit', onGetProjects)
   // $('#show-all-projects').on('submit', onShowAllProjects)
   $('#update-project').on('submit', onUpdateProject)
-  $('#delete-project').on('submit', onDeleteProject)
+  // $('#delete-project').on('submit', onDeleteProject)
+  $('.content').on('click', 'button', onDeleteProject)
 }
 
 module.exports = {

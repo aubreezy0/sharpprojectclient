@@ -1,26 +1,33 @@
-<p>{{projects}}</p>
+
 {{#each projects as |project|}}
 
-  <!-- Developers, why are we using data-id and not just id? -->
   <h1 data-id="{{project.id}}" class="my-project">
     <small>Title: {{project.project_title}}</small>
   </h1>
-  <ul data-id="{{project.id}}">
-    <li>
+  <ul>
+    <li data-id="{{project.id}}">
       {{#if project.project_title}}
         {{project.project_title}}
       {{else}}
         No project information. Try adding your first project
       {{/if}}
-    </li>
-    <li>
-      {{#if project.difficulty}}
-        {{project.difficulty}}
+      <div></div>
+
+ID:
+      {{#if project.id}}
+        {{project.id}}
       {{else}}
         It can't be that hard!
       {{/if}}
-    </li>
-    <li><button type="submit">Remove</button></li>
+<div>
+    <button type="submit" data-id="{{project.id}}">Remove</button>
+</div>
   </ul>
 
 {{/each}}
+
+<!-- {{#if project.difficulty}}
+  {{project.difficulty}}
+{{else}}
+  It can't be that hard!
+{{/if}} -->

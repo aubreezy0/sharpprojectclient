@@ -87,13 +87,12 @@ const showAllProjects = function (data) {
 const deleteProject = function (data) {
   console.log('deleting a project that belongs to ', store.user)
   return $.ajax({
-    url: config.apiUrl + '/projects/' + data.project.id,
+    url: config.apiUrl + '/projects/' + data,
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     },
-    method: 'DELETE',
-    data
+    method: 'DELETE'
   })
 }
 

@@ -6,7 +6,6 @@ const showProjectsTemplate = require('../templates/project-listing.handlebars')
 const getProjectsSuccess = (data) => {
   console.log(data)
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
-  console.log(showProjectsHtml)
   $('.content').append(showProjectsHtml)
   // if (data.projects.length === 0) {
   //   $('.content').html('Time to add a project!')
