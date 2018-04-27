@@ -1,51 +1,27 @@
-Wireframes were done using pencil and notebook.
+The Sharp Project Client Application
 
-Both drafts of my user flow are here. Trimmed after 1:1
+Link to API repo: https://github.com/aubreezy0/sharp-project
+
+The Sharp Project is a crowd-sourced tool for browsing and contributing glass project ideas, including a difficulty level for ease of project choice. Sharp Project users will be able to browse all of the projects entered, can add their own project idea, which they can then edit and update (or delete) as needed. 
+
+The ERD for the show project represents a one to many relationship, with users being able to view all projects, and add many projects, but each of those projects has just one owner who can modify the projects.
+
+I was very methodical in my planning for this project. My wireframes demonstrate an evolution of thinking on the scope of the project, and ends with the one drawn with my instructor which is a much simpler format to meet MVP.
+
+Another thing I did this time that was different was that I did a full user flow. This helped me think through the messages I would need (and when) and also prep for Adding/Removing classes for hiding certain elements.
+
+This is a project that could go in many directions. I would like this to be even more informative. In future versions, this could have an inventory of supplies recommended for the projects, or the ability to pin some to your own account always ready for reference.
+
+My original draft and the draft of the user flow after our one on ones are here:
 https://docs.google.com/document/d/1Bvbzw3f0osK4DnHlwUgG3kAVOVbXYfZQI23kc5luGsc/edit#
 
 Wireframes are here:
 https://imgur.com/a/xvJI4sZ
 
-ERDs
-https://docs.google.com/spreadsheets/d/1_Ts222wQVUdSmljrJmNMmUYt0SuOG5l9y_kiFeyHOs8/edit#gid=0
+Technologies Used:
 
-## Structure
-
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`config/environment.js`](config/environment.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
-
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt test`: runs any automated tests, depends on `grunt build`
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
+HTML
+CSS/SCSS
+JavaScript
+jQuery
+Handlebars
