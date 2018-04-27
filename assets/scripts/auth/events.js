@@ -5,7 +5,7 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('sign up ran!')
+  // console.log('sign up ran!')
 
   const data = getFormFields(event.target)
   document.getElementById('sign-up').reset()
@@ -17,7 +17,7 @@ const onSignUp = function (event) {
 // sign-in
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('sign in ran!')
+  // console.log('sign in ran!')
 
   const data = getFormFields(event.target)
   document.getElementById('sign-in').reset()
@@ -29,7 +29,7 @@ const onSignIn = function (event) {
 // change-passwords
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('change password ran!')
+  // console.log('change password ran!')
 
   const data = getFormFields(event.target)
   document.getElementById('change-password').reset()
@@ -41,7 +41,7 @@ const onChangePassword = function (event) {
 // sign-out
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('sign out ran')
+  // console.log('sign out ran')
 
   const data = getFormFields(event.target)
   document.getElementById('sign-out').reset()
@@ -53,7 +53,7 @@ const onSignOut = function (event) {
 // add project
 const onAddProject = function (event) {
   event.preventDefault()
-  console.log('add project ran!')
+  // console.log('add project ran!')
 
   const data = getFormFields(event.target)
   document.getElementById('add-project').reset()
@@ -84,7 +84,7 @@ const onGetProjects = (event) => {
 // update project onUpdateProject
 const onUpdateProject = function (event) {
   event.preventDefault()
-  console.log('event onUpdateProject ran')
+  // console.log('event onUpdateProject ran')
 
   const data = getFormFields(event.target)
   // document.getElementById('update-project').reset()
@@ -96,7 +96,7 @@ const onUpdateProject = function (event) {
 // delete project
 const onDeleteProject = function (event) {
   event.preventDefault()
-  console.log('onDeleteProject ran.')
+  // console.log('onDeleteProject ran.')
 
   // const data = $(event.target).attr('data-id')
   const data = $(event.target).closest('ul').attr('data-id')

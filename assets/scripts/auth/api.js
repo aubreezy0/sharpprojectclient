@@ -20,7 +20,7 @@ const signIn = function (data) {
 }
 
 const changePassword = function (data) {
-  console.log('data is ', data)
+  // console.log('data is ', data)
   return $.ajax({
     url: config.apiUrl + '/change-password/',
     method: 'PATCH',
@@ -33,7 +33,7 @@ const changePassword = function (data) {
 }
 
 const signOut = function (data) {
-  console.log('signOut store.user is ', store.user)
+  // console.log('signOut store.user is ', store.user)
   return $.ajax({
     url: config.apiUrl + `/sign-out/`,
     method: 'DELETE',
@@ -46,7 +46,7 @@ const signOut = function (data) {
 }
 
 const addProject = function (data) {
-  console.log('addProject store.user is ', store.user)
+  // console.log('addProject store.user is ', store.user)
   return $.ajax({
     url: config.apiUrl + '/projects',
     headers: {
@@ -59,7 +59,7 @@ const addProject = function (data) {
 }
 
 const getProjects = function (data) {
-  console.log('getProjects ran')
+  // console.log('getProjects ran')
   return $.ajax({
     url: config.apiUrl + '/projects',
     // headers: {
@@ -72,7 +72,7 @@ const getProjects = function (data) {
 }
 
 const showAllProjects = function (data) {
-  console.log('show all projects ran')
+  // console.log('show all projects ran')
   return $.ajax({
     url: config.apiUrl + '/projects',
     // headers: {
@@ -85,7 +85,7 @@ const showAllProjects = function (data) {
 }
 
 const deleteProject = function (data) {
-  console.log('api deleteProject ran ', store.user)
+  // console.log('api deleteProject ran ', store.user)
   return $.ajax({
     url: config.apiUrl + '/projects/' + data,
     headers: {
@@ -117,7 +117,7 @@ const deleteProject = function (data) {
 
 const updateProject = function (data) {
   // console.log(data)
-  console.log('updateProject data is ', store.user)
+  // console.log('updateProject data is ', store.user)
   return $.ajax({
     url: config.apiUrl + `/projects/` + data.id,
     method: 'PATCH',
