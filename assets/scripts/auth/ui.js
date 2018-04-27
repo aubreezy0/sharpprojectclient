@@ -37,10 +37,10 @@ const signUpFailure = function (error) {
 
 // sign in
 const signInSuccess = function (data) {
-  // $('#auth-message').delay(3000).fadeOut(150)
-  $('#auth-message').text('Time to check out some projects!')
+  $('#auth-message').delay(3000).fadeOut(150)
+  $('#auth-message').text('You are all signed in. Time to check out some projects!')
   $('#auth-message').css('background-color', 'green')
-  // $('.sign-in-show').delay(2000).addClass('hidden')
+  $('.sign-in-show').delay(3000).addClass('hidden')
   $('.sign-up-show').addClass('hidden')
   $('.sign-in-show').addClass('hidden')
   $('.main').removeClass('hidden')
@@ -72,10 +72,15 @@ const changePasswordFailure = function () {
 // sign-out
 
 const signOutSuccess = function (data) {
-  // $('#message').delay(2000).fadeOut(150)
-  $('#auth-message').text('Signed out successfully')
-  $('#auth-message').css('background-color', 'green')
+  $('#auth-message2').delay(2000).fadeOut(150)
+  $('#auth-message2').text('Signed out successfully')
+  $('#auth-message2').css('background-color', 'green')
   console.log('signOutSuccess ran and was a success!!')
+  $('.sign-up-show').removeClass('hidden')
+  $('.sign-in-show').removeClass('hidden')
+  $('.main').addClass('hidden')
+  $('input[type=text]').val('')
+  $('input[type=password]').val('')
   store.user = null
 }
 
