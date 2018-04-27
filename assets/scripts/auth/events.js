@@ -87,7 +87,7 @@ const onUpdateProject = function (event) {
   // console.log('event onUpdateProject ran')
 
   const data = getFormFields(event.target)
-  // document.getElementById('update-project').reset()
+  document.getElementById('update-project').reset()
   api.updateProject(data)
     .then(ui.updateProjectSuccess)
     .catch(ui.updateProjectFailure)
