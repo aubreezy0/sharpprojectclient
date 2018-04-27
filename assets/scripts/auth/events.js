@@ -96,10 +96,11 @@ const onUpdateProject = function (event) {
 // delete project
 const onDeleteProject = function (event) {
   event.preventDefault()
-  console.log('This thing is a goner.')
+  console.log('onDeleteProject ran.')
 
-  const data = $(event.target).attr('data-id')
-  document.getElementById('delete-project').reset()
+  // const data = $(event.target).attr('data-id')
+  const data = $(event.target).closest('ul').attr('data-id')
+  // document.getElementById('delete-project').reset()
   api.deleteProject(data)
     .then(ui.showDeleteProjectSuccess)
     .catch(ui.showDeleteProjectFailure)

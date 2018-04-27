@@ -15,11 +15,11 @@
       <h1>The Sharp Project</h1>
       <p>For WDI-24</p>
 
-<p id="message"></p>
-<h1 data-id
 
+<p id="auth-message"></p>
+<p id="auth-message2"></p>
 
-
+<div class="sign-up-show">
       <h3>Sign Up.</h3>
       <form id="sign-up">
         <fieldset>
@@ -29,7 +29,9 @@
           <input class="button" type="submit" value="Sign up!">
         </fieldset>
       </form>
+    </div>
 
+    <div class="sign-in-show">
     <h3>Sign In.</h3>
     <form id="sign-in">
       <fieldset>
@@ -38,26 +40,11 @@
         <input class="button" type="submit" value="Sign in!">
       </fieldset>
     </form>
-
-
-    <h3>Change Password</h3>
-    <form id="change-password">
-      <fieldset>
-        <input type="password" name="passwords[old]" autocomplete="password" placeholder="Old password">
-        <input type="password" name="passwords[new]" autocomplete="password" placeholder="New password">
-        <input class="button" type="submit" value="Change password.">
-      </fieldset>
-    </form>
-
-
-    <h3>Sign Out</h3>
-    <form id="sign-out">
-      <fieldset>
-        <input class="button" type="submit" value="Sign out.">
-      </fieldset>
-    </form>
+  </div>
 
     <hr>
+<div class="main hidden">
+<p id="message"></p>
 
     <h3>Add a Project</h3>
     <form id="add-project">
@@ -104,22 +91,24 @@
       </fieldset>
     </form> -->
 
-    <h3>Delete a Project</h3>
-    <form id="delete-project">
+<hr><hr>
+
+    <h3>Change Password</h3>
+    <form id="change-password">
       <fieldset>
-        <input type="number" name="project[id]" autocomplete="delete" placeholder="Project ID">
-        <input class="button" type="submit" value="Delete Project.">
+        <input type="password" name="passwords[old]" autocomplete="password" placeholder="Old password">
+        <input type="password" name="passwords[new]" autocomplete="password" placeholder="New password">
+        <input class="button" type="submit" value="Change password.">
       </fieldset>
     </form>
-<ul>
-
-    <!-- <let newHTML = ""
-data.forEach(function (project) {
-  newHTML += "<li><h4>" + project.project_title + "</h4> has a challenge level of " + project.difficulty + ". Have fun!</li>"
-})
-$("#project").html(newHTML)>
-</ul> -->
 
 
+    <h3>Sign Out</h3>
+    <form id="sign-out">
+      <fieldset>
+        <input class="button" type="submit" value="Sign out.">
+      </fieldset>
+    </form>
+</div>
     </body>
 </html>

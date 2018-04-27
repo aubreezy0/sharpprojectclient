@@ -85,7 +85,7 @@ const showAllProjects = function (data) {
 }
 
 const deleteProject = function (data) {
-  console.log('deleting a project that belongs to ', store.user)
+  console.log('api deleteProject ran ', store.user)
   return $.ajax({
     url: config.apiUrl + '/projects/' + data,
     headers: {
