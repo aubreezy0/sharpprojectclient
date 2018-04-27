@@ -56,7 +56,10 @@ const signInFailure = function () {
 
 // change-password
 const changePasswordSuccess = function (data) {
-  $('#auth-message').delay(2000).fadeOut(150)
+  $('#message').delay(2000).fadeOut(15)
+  $('#message').text('Successfully changed password')
+  $('#message').css('background-color', 'green')
+  $('#auth-message').delay(2000).fadeOut(15)
   $('#auth-message').text('Successfully changed password')
   $('#auth-message').css('background-color', 'green')
   // console.log('changePasswordSuccess ran!')
@@ -72,9 +75,9 @@ const changePasswordFailure = function () {
 // sign-out
 
 const signOutSuccess = function (data) {
-  $('#auth-message2').delay(2000).fadeOut(150)
-  $('#auth-message2').text('Signed out successfully')
-  $('#auth-message2').css('background-color', 'green')
+  $('#message3').delay(2000).fadeOut(15)
+  $('#message3').text('Signed out successfully')
+  $('#message3').css('background-color', 'green')
   // console.log('signOutSuccess ran and was a success!!')
   $('.sign-up-show').removeClass('hidden')
   $('.sign-in-show').removeClass('hidden')
@@ -97,7 +100,7 @@ const addProjectSuccess = function (data) {
   $('#message').text('You added a project!')
   $('#message').css('background-color', 'green')
   // ('.sign-up-show').addClass('hidden')
-  ////  console.log('onAddProjectSuccess ran. Data is :', data)
+  // console.log('onAddProjectSuccess ran. Data is :', data)
 }
 
 const addProjectFailure = function () {
@@ -132,7 +135,7 @@ const addProjectFailure = function () {
 // update project
 const updateProjectSuccess = function (data) {
   // $('#message').delay(2000).fadeOut(150)
-  $('#message').text('You made it different!')
+  $('#message').text('Project Updated')
   $('#message').css('background-color', 'green')
   // ('.sign-up-show').addClass('hidden')
   // console.log('updateProjectSuccess ran.:', data)
@@ -148,7 +151,7 @@ const updateProjectFailure = function () {
 // delete project
 const deleteProjectSuccess = function (data) {
   // $('#message').delay(2000).fadeOut(150)
-  $('#message2').text('Its a goner!')
+  $('#message2').text('The project was deleted!')
   $('#message2').css('background-color', 'green')
   // ('.sign-up-show').addClass('hidden')
   $('input[type=text]').val('')
