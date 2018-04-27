@@ -101,10 +101,16 @@ const onDeleteProject = function (event) {
   // const data = $(event.target).attr('data-id')
   const data = $(event.target).closest('ul').attr('data-id')
   // document.getElementById('delete-project').reset()
+  // const gameId = $(event.target).closest('ul').attr('data-id')
   api.deleteProject(data)
-    .then(ui.showDeleteProjectSuccess)
-    .catch(ui.showDeleteProjectFailure)
+    .then(ui.deleteProjectSuccess)
+    .catch(ui.deleteProjectFailure)
 }
+
+// const onClearProjects = (event) => {
+//   event.preventDefault()
+//   ui.clearGames()
+// }
 
 // handlers
 const addHandlers = () => {

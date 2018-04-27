@@ -148,22 +148,29 @@ const updateProjectFailure = function (error) {
 // delete project
 const deleteProjectSuccess = function (data) {
   // $('#message').delay(2000).fadeOut(150)
-  $('#message').text('Its a goner!')
-  $('#message').css('background-color', 'green')
+  $('#message2').text('Its a goner!')
+  $('#message2').css('background-color', 'green')
   // ('.sign-up-show').addClass('hidden')
   $('input[type=text]').val('')
   $('input[type=number]').val('')
+  setTimeout(function () {
+    $('#message').text('')
+  }, 3000)
   console.log('deleteProjectSuccess ran.:', data)
 }
 
 const deleteProjectFailure = function (error) {
-  // $('#message').delay(2000).fadeOut(150)
-  $('#message').text('The project was not deleted.')
-  $('#message').css('background-color', 'red')
+  $('#message2').delay(2000).fadeOut(150)
+  $('#message2').text('The project was not deleted.')
+  $('#message2').css('background-color', 'red')
   $('input[type=text]').val('')
   $('input[type=number]').val('')
   console.error('deleteProjectFailure ran. Error is :', error)
 }
+
+// const clearProjects = () => {
+//   $('.content').empty()
+// }
 
 module.exports = {
   // showProjectsTemplate,
@@ -185,5 +192,6 @@ module.exports = {
   deleteProjectSuccess,
   deleteProjectFailure,
   updateProjectSuccess,
-  updateProjectFailure
+  updateProjectFailure,
+  clearProjects
 }
