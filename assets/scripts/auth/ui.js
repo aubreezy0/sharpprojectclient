@@ -6,15 +6,15 @@ const showProjectsTemplate = require('../templates/project-listing.handlebars')
 const getProjectsSuccess = (data) => {
   // console.log(data)
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
-  $('.content').append(showProjectsHtml)
-  // if (data.projects.length === 0) {
-  //   $('.content').html('Time to add a project!')
-  // }
+  $('.content').html('').append(showProjectsHtml)
+  if (data.projects.length === 0) {
+    $('.content').html('You\'ll need to all a project first!')
+  }
 }
 
 const getProjectsFailure = function () {
   // $('#message').delay(2000).fadeOut(150)
-  $('#message').text('Something went wrong. Try again!')
+  $('#message').text('Sorry, Something went wrong. Try again!')
   $('#message').css('background-color', 'red')
   // console.error('signUpFailure ran. Error is :', error)
 }
@@ -24,23 +24,28 @@ const signUpSuccess = function (data) {
   // $('#auth-message').delay(3000).fadeOut(10)
   $('#auth-message').text('Welcome to the Sharp Project. Please sign in!')
   $('#auth-message').css('background-color', 'green')
+  setTimeout(function () {
+    $('#auth-message').text('')
+  }, 2000)
   $('.sign-up-show').addClass('hidden')
   // console.log('signUpSuccess ran. Data is :', data)
 }
 
 const signUpFailure = function () {
-  // $('#auth-message').delay(3000).fadeOut(150)
-  $('#auth-message').text('Error on sign up')
+  // Fail msg does not fade until replaced by successful signin.
+  $('#auth-message').text('Please check username and password and try again.')
   $('#auth-message').css('background-color', 'red')
   // console.error('signUpFailure ran. Error is :', error)
 }
 
 // sign in
 const signInSuccess = function (data) {
-  $('#auth-message').delay(3000).fadeOut(150)
   $('#auth-message').text('You are all signed in. Time to check out some projects!')
   $('#auth-message').css('background-color', 'green')
-  $('.sign-in-show').delay(3000).addClass('hidden')
+  setTimeout(function () {
+    $('#auth-message').text('')
+  }, 2000)
+  $('.sign-in-show').addClass('hidden')
   $('.sign-up-show').addClass('hidden')
   $('.sign-in-show').addClass('hidden')
   $('.main').removeClass('hidden')
@@ -49,30 +54,29 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function () {
-  $('#auth-message').text('You failed')
+  $('#auth-message').text('Please try again.')
   $('#auth-message').css('background-color', 'red')
   // console.error('signInFailure ran. Error is :', error)
 }
 
 // change-password
 const changePasswordSuccess = function (data) {
-  $('#message').delay(2000).fadeOut(15)
-  $('#message').text('Successfully changed password')
-  $('#message').css('background-color', 'green')
-  $('#auth-message').delay(2000).fadeOut(15)
-  $('#auth-message').text('Successfully changed password')
-  $('#auth-message').css('background-color', 'green')
-  // console.log('changePasswordSuccess ran!')
+  $('#message-pw').text('Successfully changed password')
+  $('#message-pw').css('background-color', 'green')
+  setTimeout(function () {
+    $('#message-pw').text('')
+  }, 3000)
 }
 
 const changePasswordFailure = function () {
-  // $('#auth-message').delay(2000).fadeOut(150)
-  $('#auth-message').text('Password not changed')
-  $('#auth-message').css('background-color', 'red')
-  // console.error('changePasswordFailure ran. Error is :', error)
-}
+  $('#message-pw').text('Did not change password')
+  $('#message-pw').css('background-color', 'red')
+  setTimeout(function () {
+    $('#message-pw').text('')
+  }, 3000)
 
 // sign-out
+}
 
 const signOutSuccess = function (data) {
   $('#message3').delay(2000).fadeOut(15)
@@ -97,17 +101,20 @@ const signOutFailure = function () {
 
 // add project
 const addProjectSuccess = function (data) {
-  // $('#message').delay(3000).fadeOut(150)
-  $('#message').text('You added a project!')
-  $('#message').css('background-color', 'green')
-  // ('.sign-up-show').addClass('hidden')
+  $('#message-add').text('You added a project!')
+  $('#message-add').css('background-color', 'green')
+  setTimeout(function () {
+    $('#message-add').text('')
+  }, 3000)
   // console.log('onAddProjectSuccess ran. Data is :', data)
 }
 
 const addProjectFailure = function () {
-  // $('#message').delay(2000).fadeOut(150)
-  $('#message').text('Something went wrong. Try again!')
-  $('#message').css('background-color', 'red')
+  $('#message-add').text('Something went wrong. Try again!')
+  $('#message-add').css('background-color', 'red')
+  setTimeout(function () {
+    $('#message-add').text('')
+  }, 3000)
   // console.error('signUpFailure ran. Error is :', error)
 }
 
@@ -135,26 +142,27 @@ const addProjectFailure = function () {
 
 // update project
 const updateProjectSuccess = function (data) {
-  // $('#message').delay(2000).fadeOut(150)
-  $('#message').text('Project Updated')
-  $('#message').css('background-color', 'green')
-  // ('.sign-up-show').addClass('hidden')
+  $('#message-update').text('Project Updated')
+  $('#message-update').css('background-color', 'green')
+  setTimeout(function () {
+    $('#message-update').text('')
+  }, 2000)
   // console.log('updateProjectSuccess ran.:', data)
 }
 
 const updateProjectFailure = function () {
-  // $('#message').delay(2000).fadeOut(150)
-  $('#message').text('Something went wrong. Try again!')
-  $('#message').css('background-color', 'red')
+  $('#message-update').text('Something went wrong. Try again!')
+  $('#message-update').css('background-color', 'red')
+  setTimeout(function () {
+    $('message-update').text('')
+  }, 2000)
   // console.error('updateProjectFailure ran. Error is :', error)
 }
 
 // delete project
 const deleteProjectSuccess = function (data) {
-  // $('#message').delay(2000).fadeOut(150)
-  $('#message2').text('The project was deleted!')
-  $('#message2').css('background-color', 'green')
-  // ('.sign-up-show').addClass('hidden')
+  $('#message').text('The project was deleted!')
+  $('#message').css('background-color', 'green')
   $('input[type=text]').val('')
   $('input[type=number]').val('')
   setTimeout(function () {
@@ -164,11 +172,13 @@ const deleteProjectSuccess = function (data) {
 }
 
 const deleteProjectFailure = function () {
-  $('#message2').delay(2000).fadeOut(150)
-  $('#message2').text('The project was not deleted.')
-  $('#message2').css('background-color', 'red')
+  $('#message').text('The project was not deleted.')
+  $('#message').css('background-color', 'red')
   $('input[type=text]').val('')
   $('input[type=number]').val('')
+  setTimeout(function () {
+    $('message').text('')
+  }, 3000)
   // console.error('deleteProjectFailure ran. Error is :', error)
 }
 
@@ -196,6 +206,6 @@ module.exports = {
   deleteProjectSuccess,
   deleteProjectFailure,
   updateProjectSuccess,
-  updateProjectFailure
+  updateProjectFailure,
   // clearProjects
 }

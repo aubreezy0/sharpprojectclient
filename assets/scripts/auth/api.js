@@ -15,6 +15,9 @@ const signIn = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
+    dheaders: {
+      contentType: 'application/json'
+    },
     data
   })
 }
@@ -62,10 +65,10 @@ const getProjects = function (data) {
   // console.log('getProjects ran')
   return $.ajax({
     url: config.apiUrl + '/projects',
-    // headers: {
-    //   contentType: 'application/json',
-    //   Authorization: 'Token token=' + store.user.token
-    // },
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
     method: 'GET',
     data
   })

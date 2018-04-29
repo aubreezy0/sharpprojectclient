@@ -17,7 +17,6 @@
 
 
 <p id="auth-message"></p>
-<p id="auth-message2"></p>
 
 <div class="sign-up-show">
       <h3>Sign Up.</h3>
@@ -44,9 +43,8 @@
 
     <hr>
 <div class="main hidden">
-<p id="message"></p><br>
-<p id="message2"></p><br>
-<p id="message2"></p><br>
+<p id="message-add"></p>
+<p id="message2"></p>
     <h3>Add a Project</h3>
     <form id="add-project">
       <fieldset>
@@ -56,8 +54,6 @@
       </fieldset>
     </form>
 
-<!-- unclear about differences of index/show/update (b/c I'm tired?) so keeping these very literal for now./-->
-
     <h3>Show all Projects</h3>
     <form id="show-all-projects">
       <fieldset>
@@ -66,7 +62,7 @@
     </form>
 
     <div id="content" class="content">
-      </div>
+    </div>
 
     <!-- <h3>See Your Projects</h3>
     <form id="show-user-projects">
@@ -76,6 +72,7 @@
     </form> -->
 
     <h3>Update Project</h3>
+    <p id="message-update"></p>
     <form id="update-project">
       <fieldset>
         <input type="number" name="id" autocomplete="update" placeholder="Project ID">
@@ -85,16 +82,10 @@
       </fieldset>
     </form>
 
-    <!-- <h3>User Projects</h3>
-    <form id="user-projects">
-      <fieldset>
-        <input class="button" type="submit" value="User projects.">
-      </fieldset>
-    </form> -->
-
 <hr>
 
     <h3>Change Password</h3>
+<p id="message-pw"></p><br>
     <form id="change-password">
       <fieldset>
         <input type="password" name="passwords[old]" autocomplete="password" placeholder="Old password">
