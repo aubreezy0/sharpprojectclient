@@ -99,25 +99,6 @@ const deleteProject = function (data) {
   })
 }
 
-// const updateProject = function (data) {
-//   console.log('updateProject data is ', store.user)
-//   return $.ajax({
-//     url: config.apiUrl + '/projects/' + data.project.id,
-//     headers: {
-//       contentType: 'application/json',
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     method: 'PATCH',
-//     data: {
-//       id: data.project.id,
-//       project: {
-//         project_title: data.project.project_title,
-//         difficulty: data.project.difficulty
-//       }
-//     }
-//   })
-// }
-
 const updateProject = function (data) {
   // console.log(data)
   // console.log('updateProject data is ', store.user)

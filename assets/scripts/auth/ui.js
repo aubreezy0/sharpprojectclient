@@ -8,20 +8,21 @@ const getProjectsSuccess = (data) => {
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
   $('.content').html('').append(showProjectsHtml)
   if (data.projects.length === 0) {
-    $('.content').html('You\'ll need to all a project first!')
+    $('.content').html('You\'ll need to add a project first!')
   }
 }
 
 const getProjectsFailure = function () {
-  // $('#message').delay(2000).fadeOut(150)
   $('#message').text('Sorry, Something went wrong. Try again!')
   $('#message').css('background-color', 'red')
+  setTimeout(function () {
+    $('#message').text('')
+  }, 2000)
   // console.error('signUpFailure ran. Error is :', error)
 }
 
 // sign up
 const signUpSuccess = function (data) {
-  // $('#auth-message').delay(3000).fadeOut(10)
   $('#auth-message').text('Welcome to the Sharp Project. Please sign in!')
   $('#auth-message').css('background-color', 'green')
   setTimeout(function () {
@@ -74,15 +75,15 @@ const changePasswordFailure = function () {
   setTimeout(function () {
     $('#message-pw').text('')
   }, 3000)
-
-// sign-out
 }
 
+// sign-out
 const signOutSuccess = function (data) {
-  $('#message3').delay(2000).fadeOut(15)
   $('#message3').text('Signed out successfully')
   $('#message3').css('background-color', 'green')
-  // console.log('signOutSuccess ran and was a success!!')
+  setTimeout(function () {
+    $('#message3').text('')
+  }, 3000)
   $('.sign-up-show').removeClass('hidden')
   $('.sign-in-show').removeClass('hidden')
   $('.main').addClass('hidden')
@@ -118,31 +119,9 @@ const addProjectFailure = function () {
   // console.error('signUpFailure ran. Error is :', error)
 }
 
-// show all projects
-// const showAllProjectsSuccess = function (data) {
-// //   const showProjectsHtml = showProjectsTemplate({ projects: data.project })
-// //   $('.content').html(showProjectsHtml)
-// //   if (data.project.length === 0) {
-// //     $('.content').html('Add a project first, it will be super fun!')
-// //   }
-// // }
-//   // $('#message').delay(2000).fadeOut(150)
-//   $('#message').text('Look at all the projects people have added!')
-//   $('#message').css('background-color', 'green')
-//   // ('.sign-up-show').addClass('hidden')
-//   console.log('showAllProjectsSuccess ran:', data)
-// }
-//
-// const showAllProjectsFailure = function (error) {
-//   // $('#message').delay(2000).fadeOut(150)
-//   $('#message').text('Something went wrong. Try again!')
-//   $('#message').css('background-color', 'red')
-//   console.error('showAllProjectsFailure ran. Error is :', error)
-// }
-
 // update project
 const updateProjectSuccess = function (data) {
-  $('#message-update').text('Project Updated')
+  $('#message-update').text('Project Updated!')
   $('#message-update').css('background-color', 'green')
   setTimeout(function () {
     $('#message-update').text('')
@@ -187,8 +166,6 @@ const deleteProjectFailure = function () {
 // }
 
 module.exports = {
-  // showProjectsTemplate,
-  // showProjectsHtml,
   getProjectsSuccess,
   getProjectsFailure,
   signUpSuccess,
@@ -201,11 +178,9 @@ module.exports = {
   signOutFailure,
   addProjectSuccess,
   addProjectFailure,
-  // showAllProjectsSuccess,
-  // showAllProjectsFailure,
   deleteProjectSuccess,
   deleteProjectFailure,
   updateProjectSuccess,
-  updateProjectFailure,
+  updateProjectFailure
   // clearProjects
 }

@@ -69,17 +69,6 @@ const onGetProjects = (event) => {
     .then(ui.getProjectsSuccess)
     .catch(ui.getProjectsFailure)
 }
-// show all Projects
-// const onShowAllProjects = function (event) {
-//   event.preventDefault()
-//   console.log('Is events the the thing you are looking for?')
-//
-//   const data = getFormFields(event.target)
-//   document.getElementById('show-all-projects').reset()
-//   api.showAllProjects(data)
-//     .then(ui.showAllProjectsSuccess)
-//     .catch(ui.showAllProjectsFailure)
-// }
 
 // update project onUpdateProject
 const onUpdateProject = function (event) {

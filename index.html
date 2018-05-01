@@ -22,9 +22,9 @@
       <h3>Sign Up.</h3>
       <form id="sign-up">
         <fieldset>
-          <input type="text" name="credentials[email]" autocomplete="email" placeholder="Email">
-          <input type="password" name="credentials[password]" autocomplete="password" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" autocomplete="password"  placeholder="Password Confirmation">
+          <input type="text" name="credentials[email]" autocomplete="email" placeholder="Email" required>
+          <input type="password" name="credentials[password]" autocomplete="password" placeholder="Password" required>
+          <input type="password" name="credentials[password_confirmation]" autocomplete="password"  placeholder="Password Confirmation" required>
           <input class="button" type="submit" value="Sign up!">
         </fieldset>
       </form>
@@ -34,8 +34,8 @@
     <h3>Sign In.</h3>
     <form id="sign-in">
       <fieldset>
-        <input type="text" name="credentials[email]" autocomplete="email" placeholder="Email">
-        <input type="password" name="credentials[password]" autocomplete="password" placeholder="Password">
+        <input type="text" name="credentials[email]" autocomplete="email" placeholder="Email" required>
+        <input type="password" name="credentials[password]" autocomplete="password" placeholder="Password" required>
         <input class="button" type="submit" value="Sign in!">
       </fieldset>
     </form>
@@ -48,8 +48,8 @@
     <h3>Add a Project</h3>
     <form id="add-project">
       <fieldset>
-        <input type="text" name="project[project_title]" autocomplete="title" placeholder="Project title">
-        <input type="text" name="project[difficulty]" autocomplete="difficulty" placeholder="Level of difficulty">
+        <input type="text" name="project[project_title]" autocomplete="title" placeholder="Project title" required>
+        <input type="text" name="project[difficulty]" autocomplete="difficulty" placeholder="Level of difficulty" required>
         <input class="button" type="submit" value="Create Project.">
       </fieldset>
     </form>
@@ -64,20 +64,13 @@
     <div id="content" class="content">
     </div>
 
-    <!-- <h3>See Your Projects</h3>
-    <form id="show-user-projects">
-      <fieldset>
-        <input class="button" type="submit" value="See Your Projects.">
-      </fieldset>
-    </form> -->
-
     <h3>Update Project</h3>
     <p id="message-update"></p>
     <form id="update-project">
       <fieldset>
-        <input type="number" name="id" autocomplete="update" placeholder="Project ID">
-        <input type="text" name="project[project_title]" autocomplete="title" placeholder="New project title">
-        <input type="text" name="project[difficulty]" autocomplete="difficulty" placeholder="Level of difficulty">
+        <input type="number" name="id" autocomplete="update" placeholder="ID number" required>
+        <input type="text" name="project[project_title]" autocomplete="title" placeholder="New project title" required>
+        <input type="text" name="project[difficulty]" autocomplete="difficulty" placeholder="Level of difficulty" required>
         <input class="button" type="submit" value="Update Project.">
       </fieldset>
     </form>
@@ -88,8 +81,8 @@
 <p id="message-pw"></p><br>
     <form id="change-password">
       <fieldset>
-        <input type="password" name="passwords[old]" autocomplete="password" placeholder="Old password">
-        <input type="password" name="passwords[new]" autocomplete="password" placeholder="New password">
+        <input type="password" name="passwords[old]" autocomplete="password" placeholder="Old password" required>
+        <input type="password" name="passwords[new]" autocomplete="password" placeholder="New password" required>
         <input class="button" type="submit" value="Change password.">
       </fieldset>
     </form>
