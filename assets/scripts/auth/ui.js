@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-const showProjectsTemplate = require('../templates/project-listing.handlebars')
+const showProjectsTemplate = require('../templates/all-project-listing.handlebars')
 
 const getProjectsSuccess = (data) => {
   // console.log(data)

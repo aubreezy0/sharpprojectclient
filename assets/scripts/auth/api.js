@@ -64,7 +64,7 @@ const addProject = function (data) {
 const getProjects = function (data) {
   // console.log('getProjects ran')
   return $.ajax({
-    url: config.apiUrl + '/projects',
+    url: config.apiUrl + '/projects/' + data.projects.id,
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
@@ -78,10 +78,10 @@ const showAllProjects = function (data) {
   // console.log('show all projects ran')
   return $.ajax({
     url: config.apiUrl + '/projects',
-    // headers: {
-    //   contentType: 'application/json',
-    //   Authorization: 'Token token=' + store.user.token
-    // },
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
     method: 'GET',
     data
   })

@@ -70,6 +70,13 @@ const onGetProjects = (event) => {
     .catch(ui.getProjectsFailure)
 }
 
+const onShowAllProjects = (event) => {
+  event.preventDefault()
+  api.showAllProjects()
+    .then(ui.getProjectsSuccess)
+    .catch(ui.getProjectsFailure)
+}
+
 // update project onUpdateProject
 const onUpdateProject = function (event) {
   event.preventDefault()
@@ -108,8 +115,8 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#add-project').on('submit', onAddProject)
-  $('#show-all-projects').on('submit', onGetProjects)
-  // $('#show-all-projects').on('submit', onShowAllProjects)
+  $('#get-projects').on('submit', onGetProjects)
+  $('#show-all-projects').on('submit', onShowAllProjects)
   $('#update-project').on('submit', onUpdateProject)
   // $('#delete-project').on('submit', onDeleteProject)
   $('.content').on('click', 'button', onDeleteProject)

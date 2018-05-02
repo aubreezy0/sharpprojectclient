@@ -1,0 +1,36 @@
+
+{{#each projects as |project|}}
+
+  <h1 data-id="{{project.id}}" class="my-project">
+  </h1>
+  <ul data-id="{{project.id}}">
+      {{#if project.project_title}}
+        {{project.project_title}}
+      {{else}}
+        No project information. Try adding your first project!
+      {{/if}}
+            <div></div>
+
+  Difficulty:
+      {{#if project.difficulty}}
+        {{project.difficulty}}
+      {{else}}
+        It can't be that hard!
+      {{/if}}
+      <div></div>
+
+ID:
+      {{#if project.id}}
+        {{project.id}}
+      {{else}}
+        It can't be that hard!
+      {{/if}}
+  </ul>
+
+{{/each}}
+
+<!-- {{#if project.difficulty}}
+  {{project.difficulty}}
+{{else}}
+  It can't be that hard!
+{{/if}} -->
