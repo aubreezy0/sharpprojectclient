@@ -2,14 +2,15 @@
 
 const store = require('../store')
 const showProjectsTemplate = require('../templates/all-project-listing.handlebars')
+const myProjectsTemplate = require('../templates/project-listing.handlebars')
 
 const getProjectsSuccess = (data) => {
   // console.log(data)
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
   $('.content').html('').append(showProjectsHtml)
-  if (data.projects.length === 0) {
-    $('.content').html('You\'ll need to add a project first!')
-  }
+  // if (data.user.projects.length === 0) {
+  //   $('.content').html('You\'ll need to add a project first!')
+  // }
 }
 
 const getProjectsFailure = function () {
@@ -20,6 +21,26 @@ const getProjectsFailure = function () {
   }, 2000)
   // console.error('signUpFailure ran. Error is :', error)
 }
+
+const getMyProjectsSuccess = (data) => {
+  // console.log(data)
+  const showMyProjectsHtml = myProjectsTemplate({ projects: data.user.projects })
+  $('.content').html('').append(showMyProjectsHtml)
+  if (data.user.projects.length === 0) {
+    $('.content').html('You\'ll need to add a project first!')
+  }
+}
+
+const getMyProjectsFailure = function () {
+  $('#message').text('Sorry, Something went wrong. Try again!')
+  $('#message').css('background-color', 'red')
+  setTimeout(function () {
+    $('#message').text('')
+  }, 2000)
+  // console.error('signUpFailure ran. Error is :', error)
+}
+
+
 
 // sign up
 const signUpSuccess = function (data) {
@@ -181,6 +202,8 @@ module.exports = {
   deleteProjectSuccess,
   deleteProjectFailure,
   updateProjectSuccess,
-  updateProjectFailure
+  updateProjectFailure,
+  getMyProjectsSuccess,
+  getMyProjectsFailure
   // clearProjects
 }

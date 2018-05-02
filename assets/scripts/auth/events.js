@@ -62,12 +62,11 @@ const onAddProject = function (event) {
     .catch(ui.addProjectFailure)
 }
 
-// show all handlebars version
 const onGetProjects = (event) => {
   event.preventDefault()
   api.getProjects()
-    .then(ui.getProjectsSuccess)
-    .catch(ui.getProjectsFailure)
+    .then(ui.getMyProjectsSuccess)
+    .catch(ui.getMyProjectsFailure)
 }
 
 const onShowAllProjects = (event) => {

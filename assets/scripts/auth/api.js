@@ -64,7 +64,7 @@ const addProject = function (data) {
 const getProjects = function (data) {
   // console.log('getProjects ran')
   return $.ajax({
-    url: config.apiUrl + '/projects/' + data.projects.id,
+    url: config.apiUrl + '/users/' + store.user.id,
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
