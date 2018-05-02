@@ -59,6 +59,7 @@ const onAddProject = function (event) {
   document.getElementById('add-project').reset()
   api.addProject(data)
     .then(ui.addProjectSuccess)
+    .then(() => onGetProjects(event))
     .catch(ui.addProjectFailure)
 }
 
@@ -85,20 +86,18 @@ const onUpdateProject = function (event) {
   document.getElementById('update-project').reset()
   api.updateProject(data)
     .then(ui.updateProjectSuccess)
+    .then(() => onGetProjects(event))
     .catch(ui.updateProjectFailure)
 }
 
 // delete project
 const onDeleteProject = function (event) {
   event.preventDefault()
-  // console.log('onDeleteProject ran.')
-
-  // const data = $(event.target).attr('data-id')
   const data = $(event.target).closest('ul').attr('data-id')
-  // document.getElementById('delete-project').reset()
-  // const gameId = $(event.target).closest('ul').attr('data-id')
+
   api.deleteProject(data)
     .then(ui.deleteProjectSuccess)
+    .then(() => onGetProjects(event))
     .catch(ui.deleteProjectFailure)
 }
 

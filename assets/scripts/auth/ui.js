@@ -8,9 +8,9 @@ const getProjectsSuccess = (data) => {
   // console.log(data)
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
   $('.content').html('').append(showProjectsHtml)
-  // if (data.user.projects.length === 0) {
-  //   $('.content').html('You\'ll need to add a project first!')
-  // }
+  if (data.user.projects.length === 0) {
+    $('.content').html('You\'ll need to add a project first!')
+  }
 }
 
 const getProjectsFailure = function () {
