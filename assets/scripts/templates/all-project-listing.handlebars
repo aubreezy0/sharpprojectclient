@@ -1,3 +1,9 @@
+{{! <!-- ALL projects -->
+
+<!--getProjectsSuccess -->
+<!--showProjectsHtml -->
+<!-- const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
+$('.content').html('').append(showProjectsHtml) --> }}
 
 {{#each projects as |project|}}
 
@@ -15,7 +21,7 @@
       {{#if project.difficulty}}
         {{project.difficulty}}
       {{else}}
-        It can't be that hard!
+        It can't be that difficult!
       {{/if}}
       <div></div>
 
@@ -23,14 +29,8 @@ ID:
       {{#if project.id}}
         {{project.id}}
       {{else}}
-        It can't be that hard!
+        Can't find Project ID
       {{/if}}
   </ul>
 
 {{/each}}
-
-<!-- {{#if project.difficulty}}
-  {{project.difficulty}}
-{{else}}
-  It can't be that hard!
-{{/if}} -->
