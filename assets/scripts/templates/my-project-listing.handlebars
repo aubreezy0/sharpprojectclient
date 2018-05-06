@@ -10,27 +10,29 @@
   <h1 data-id="{{project.id}}" class="my-project">
   </h1>
   <ul data-id="{{project.id}}">
-      {{#if project.project_title}}
-        {{project.project_title}}
-      {{else}}
-        No title information.
-      {{/if}}
-            <div></div>
+      Project Title:
+        {{#if project.project_title}}
+          {{project.project_title}}
+        {{else}}
+          No title information.
+        {{/if}}
+              <div></div>
 
-  Difficulty:
-      {{#if project.difficulty_id}}
-        {{project.difficulty_id}}
-      {{else}}
-        It can't be that hard!
-      {{/if}}
-      <div></div>
+      Project ID:
+            {{#if project.id}}
+              {{project.id}}
+            {{else}}
+              Can't find Project ID
+            {{/if}}
+                  <div></div>
 
-ID:
-      {{#if project.id}}
-        {{project.id}}
-      {{else}}
-        Can't find Project ID
-      {{/if}}
+      Difficulty:
+          {{#if project.difficulty_id}}
+            {{project.difficulty_id}}
+          {{else}}
+            No rating.
+          {{/if}}
+
 <div>
     <button class="remove-button" type="submit" data-id="{{project.id}}">Remove</button>
 </div>

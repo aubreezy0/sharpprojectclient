@@ -11,7 +11,7 @@ const getProjectsSuccess = (data) => {
   console.log('getProjectsSuccess, ' + data)
   $('.content').html('').append(showProjectsHtml)
   if (data.user.projects.length === 0) {
-    $('.content').html('You\'ll need to add a project first!')
+    $('.content').html('Nothing here yet. Add a project to your collection to get started!')
   }
 }
 
@@ -30,7 +30,7 @@ const getMyProjectsSuccess = (data) => {
   const showMyProjectsHtml = myProjectsTemplate({ projects: data.user.projects })
   $('.content').html('').append(showMyProjectsHtml)
   if (data.user.projects.length === 0) {
-    $('.content').html('You\'ll need to add a project first!')
+    $('.content').html('Nothing here yet. Add a project to your collection to get started!')
   }
 }
 
@@ -42,8 +42,6 @@ const getMyProjectsFailure = function () {
   }, 2000)
   // console.error('signUpFailure ran. Error is :', error)
 }
-
-
 
 // sign up
 const signUpSuccess = function (data) {
@@ -154,7 +152,7 @@ const updateProjectSuccess = function (data) {
 }
 
 const updateProjectFailure = function () {
-  $('#message-update').text('Something went wrong. Try again!')
+  $('#message-update').text('Please double-check the Project ID number. Remember, level of difficulty must be between 1 and 3! Try again!')
   $('#message-update').css('background-color', 'red')
   setTimeout(function () {
     $('message-update').text('')

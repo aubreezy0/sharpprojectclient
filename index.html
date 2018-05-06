@@ -13,16 +13,15 @@
     </head>
     <body>
       <h1>The Sharp Project</h1>
-      <p>For WDI-24</p>
 
 
 <p id="auth-message"></p>
 
 <div class="sign-up-show">
-      <h3>Sign Up.</h3>
+      <h3>Sign Up</h3>
       <form id="sign-up">
         <fieldset>
-          <input type="text" name="credentials[email]" autocomplete="email" placeholder="Email" required>
+          <input type="email" name="credentials[email]" autocomplete="email" placeholder="Email" required>
           <input type="password" name="credentials[password]" autocomplete="password" placeholder="Password" required>
           <input type="password" name="credentials[password_confirmation]" autocomplete="password"  placeholder="Password Confirmation" required>
           <input class="button" type="submit" value="Sign up!">
@@ -31,10 +30,10 @@
     </div>
 
     <div class="sign-in-show">
-    <h3>Sign In.</h3>
+    <h3>Sign In</h3>
     <form id="sign-in">
       <fieldset>
-        <input type="text" name="credentials[email]" autocomplete="email" placeholder="Email" required>
+        <input type="email" name="credentials[email]" autocomplete="email" placeholder="Email" required>
         <input type="password" name="credentials[password]" autocomplete="password" placeholder="Password" required>
         <input class="button" type="submit" value="Sign in!">
       </fieldset>
@@ -43,62 +42,69 @@
 
     <hr>
 <div class="main hidden">
-<p id="message-add"></p>
+<br><p id="message-add"></p>
 <p id="message2"></p>
-    <h3>Add a Project</h3>
+    <h3>Add a Project to Your Collection</h3>
+    <p>Add to your collection of glass art projects, just like other artists have done.</p> <p>Projects here will appear in your personal collection, ready for viewing at any time!</p>
+    <p>Level of difficulty: 1 = Child's Play, 2 = Doable, 3 = Challenging</p>
     <form id="add-project">
       <fieldset>
         <input type="text" name="project[project_title]" autocomplete="title" placeholder="Project title" required>
-        <input type="text" name="project[difficulty_id]" autocomplete="difficulty" placeholder="Level of difficulty" required>
-        <input class="button" type="submit" value="Create Project.">
+        <input type="text" name="project[difficulty_id]" autocomplete="difficulty" placeholder="Level of difficulty, 1 - 3" required>
+        <input class="button" type="submit" value="Add Project">
       </fieldset>
     </form>
 
-    <h3>Show all Projects</h3>
+    <!--hold for next version-->
+    <!-- <h3>Show all Projects</h3>
     <form id="show-all-projects">
       <fieldset>
         <input class="button" type="submit" value="Show all Projects.">
       </fieldset>
-    </form>
+    </form> -->
 
-    <h3>Get my Projects</h3>
+    <br><h3>View My Project Collection</h3>
+    <p>You can update or remove your projects at any time!</p>
     <form id="get-projects">
       <fieldset>
-        <input class="button" type="submit" value="My Projects.">
+        <input class="button" type="submit" value="View Projects">
       </fieldset>
     </form>
 
     <div id="content" class="content">
     </div>
 
-    <h3>Update Project</h3>
+  <br>  <h3>Update Project</h3>
+    <p>Enter the <strong>Project ID</strong>, give it a <strong>New project title</strong>, and update the <strong>Level of difficulty</strong>.</p>
+    <p>1 = Child's Play, 2 = Doable, 3 = Challenging</p>
     <p id="message-update"></p>
     <form id="update-project">
       <fieldset>
-        <input type="number" name="id" autocomplete="update" placeholder="ID number" required>
+        <input type="number" name="id" autocomplete="none" placeholder="Project ID number" required>
         <input type="text" name="project[project_title]" autocomplete="title" placeholder="New project title" required>
-        <input type="text" name="project[difficulty_id]" autocomplete="difficulty" placeholder="Level of difficulty" required>
-        <input class="button" type="submit" value="Update Project.">
+        <input type="text" name="project[difficulty_id]" autocomplete="difficulty" placeholder="Level of difficulty, 1 - 3" required>
+        <input class="button" type="submit" value="Update Project">
       </fieldset>
     </form>
-
+<br>
 <hr>
 
-    <h3>Change Password</h3>
-<p id="message-pw"></p><br>
+    <h4>Change Password</h4>
+    <p id="message-pw"></p>
     <form id="change-password">
       <fieldset>
         <input type="password" name="passwords[old]" autocomplete="password" placeholder="Old password" required>
         <input type="password" name="passwords[new]" autocomplete="password" placeholder="New password" required>
-        <input class="button" type="submit" value="Change password.">
+        <input class="button" type="submit" value="Change Password">
       </fieldset>
     </form>
 
 
-    <h3>Sign Out</h3>
+    <h4>Sign Out</h4>
+    <p>Come back again soon!!</p>
     <form id="sign-out">
       <fieldset>
-        <input class="button" type="submit" value="Sign out.">
+        <input class="button" type="submit" value="Exit">
       </fieldset>
     </form>
 </div>
