@@ -18,8 +18,8 @@
             <div></div>
 
   Difficulty:
-      {{#if project.difficulty}}
-        {{project.difficulty}}
+      {{#if project.difficulty_id}}
+        {{project.difficulty_id}}
       {{else}}
         It can't be that hard!
       {{/if}}
@@ -29,7 +29,7 @@ ID:
       {{#if project.id}}
         {{project.id}}
       {{else}}
-        It can't be that hard!
+        Can't find Project ID
       {{/if}}
 <div>
     <button class="remove-button" type="submit" data-id="{{project.id}}">Remove</button>

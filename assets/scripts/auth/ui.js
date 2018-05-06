@@ -4,6 +4,7 @@ const store = require('../store')
 const showProjectsTemplate = require('../templates/all-project-listing.handlebars')
 const myProjectsTemplate = require('../templates/my-project-listing.handlebars')
 
+// showProjectsTemplate
 const getProjectsSuccess = (data) => {
   // console.log(data)
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
@@ -23,6 +24,7 @@ const getProjectsFailure = function () {
   // console.error('signUpFailure ran. Error is :', error)
 }
 
+// showMyProjectsHtml
 const getMyProjectsSuccess = (data) => {
   // console.log(data)
   const showMyProjectsHtml = myProjectsTemplate({ projects: data.user.projects })
@@ -133,7 +135,7 @@ const addProjectSuccess = function (data) {
 }
 
 const addProjectFailure = function () {
-  $('#message-add').text('Something went wrong. Try again!')
+  $('#message-add').text('Please enter a rating between 1 and 3!')
   $('#message-add').css('background-color', 'red')
   setTimeout(function () {
     $('#message-add').text('')
