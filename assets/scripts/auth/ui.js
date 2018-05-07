@@ -8,7 +8,7 @@ const myProjectsTemplate = require('../templates/my-project-listing.handlebars')
 const getProjectsSuccess = (data) => {
   // console.log(data)
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
-  console.log('getProjectsSuccess, ' + data)
+  // console.log('getProjectsSuccess, ' + data)
   $('.content').html('').append(showProjectsHtml)
   if (data.user.projects.length === 0) {
     $('.content').html('Nothing here yet. Add a project to your collection to get started!')
