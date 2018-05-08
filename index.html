@@ -50,7 +50,12 @@
     <form id="add-project">
       <fieldset>
         <input type="text" name="project[project_title]" autocomplete="title" placeholder="Project title" required>
-        <input type="text" name="project[difficulty_id]" autocomplete="difficulty" placeholder="Level of difficulty, 1 - 3" required>
+        <!-- <input type="text" name="project[difficulty_id]" autocomplete="difficulty" placeholder="Level of difficulty, 1 - 3" required> -->
+        <select class="" name="project[difficulty_id]">
+          <option value="1">Child's Play</option>
+          <option value="2">Doable</option>
+          <option value="3">Challenging</option>
+        </select>
         <input class="button" type="submit" value="Add Project">
       </fieldset>
     </form>
